@@ -7,8 +7,6 @@ git clone https://github.com/congvuong9599/vuong.git
 
 git add .
 
-git status 
-
 git commit -m ""
 
 git push
