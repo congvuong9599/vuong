@@ -29,7 +29,7 @@ def test_insert():
 @app.route('/user/insert', methods=['POST'])
 def user_insert():
     data = request.json
-    c1 = bo.Customer(data['CustomerID'], 
+    c1 = bo.Customer(data['CustomerID'],
                             data['CustomerName'],
                             data['ContactName'], 
                             data['Address'], 
@@ -78,14 +78,15 @@ def get_user_by_id(user_id):
     if result[1] != 200:
         return jsonify({'message': result[0]}) , result[0]
     return jsonify(result[0].to_json()) , 200
+#--------------------------------------------------------------------------
 # Categories
 @app.route('/categories_insert')
 def test_insertca():
-    #ConnectionString = 'database=northwind user=postgres password=postgres host=10.0.2.15 port=5432'
     c2 = do.Categories(ConnectionData)
-    c1 = bo.Categories(1 , 'vuong' , 'soft drinks, cafe, milk')
+    c1 = bo.Categories(1 , 'hai' , 'soft drinks, cafe, milk')
     s1 = c2.insert(c1)
     return s1
+
 @app.route('/categories/all')
 def get_all_categories():
     result = do.Categories(ConnectionData).get_all()
@@ -120,7 +121,12 @@ def user_get_by_id():
 @app.route('/employees/insert', methods=['POST'])
 def insert_employees():
     data = request.json
-    c1 = bo.Employees(EmployeeID=data['EmployeeID'], LastName=data['LastName'], FirstName=data['FirstName'], BirthDate=data['BirthDate'], Photo=data['Photo'],  Notes=data['Notes'])
+    c1 = bo.Employees(EmployeeID=data['EmployeeID'],
+                         LastName=data['LastName'],
+                          FirstName=data['FirstName'],
+                           BirthDate=data['BirthDate'],
+                            Photo=data['Photo'],
+                              Notes=data['Notes'])
     c2 = do.Employees(ConnectionData)
     s1 = c2.insert(c1)
     result = {}
@@ -155,7 +161,10 @@ def delete_employees_by_id(employees_id):
 @app.route('/orderdetails/insert', methods=['POST'])
 def orderdetails_insert():
     data = request.json
-    c1 = bo.OrderDetails(OrderDetailID=data['OrderDetailID'], OrderID=data['OrderID'], ProductID=data['ProductID'], Quantity=data['Quantity'])
+    c1 = bo.OrderDetails(OrderDetailID=data['OrderDetailID'],
+                                 OrderID=data['OrderID'],
+                                  ProductID=data['ProductID'],
+                                   Quantity=data['Quantity'])
     c2 = do.OrderDetails(ConnectionData)
     s1 = c2.insert(c1)
     result = {}
@@ -191,7 +200,11 @@ def delete_orderdetails_by_id(orderdetails_id):
 @app.route('/orders/insert', methods=['POST'])
 def orders_insert():
     data = request.json
-    c1 = bo.Orders(OrderID=data['OrderID'], CustomerID=data['CustomerID'], EmployeeID=data['EmployeeID'], OrderDate=data['OrderDate'], ShipperID=data['ShipperID'])
+    c1 = bo.Orders(OrderID=data['OrderID'],
+             CustomerID=data['CustomerID'],
+              EmployeeID=data['EmployeeID'],
+               OrderDate=data['OrderDate'],
+                ShipperID=data['ShipperID'])
     c2 = do.Orders(ConnectionData)
     s1 = c2.insert(c1)
     result = {}
@@ -227,7 +240,9 @@ def delete_orders_by_id(orders_id):
 @app.route('/shipper/insert', methods=['POST'])
 def insert_shipper():
     data = request.json
-    shipper = bo.Shippers(shipper_name=data['shipper_name'], phone=data['phone'])
+    shipper = bo.Shippers(ShipperID=data['ShipperID'],
+                        ShipperName=data['ShipperName'],
+                         Phone=data['Phone'])
     result = do.Shippers(ConnectionData).insert(shipper)
     return jsonify({'message': result}), 200
 
@@ -262,7 +277,13 @@ def delete_shipper_by_id(shipper_id):
 @app.route('/supplier/insert', methods=['POST'])
 def supplier_insert():
     data = request.json
-    c1 = bo.Suppliers(SupplierName=data['SupplierName'], ContactName=data['ContactName'], Address=data['Address'], City=data['City'], PostalCode=data['PostalCode'], Country=data['Country'], Phone=data['Phone'])
+    c1 = bo.Suppliers(SupplierID=data['SupplierID'],
+                    SupplierName=data['SupplierName'],
+                         ContactName=data['ContactName'],
+                          Address=data['Address'], City=data['City'],
+                           PostalCode=data['PostalCode'], 
+                           Country=data['Country'],
+                            Phone=data['Phone'])
     c2 = do.Suppliers(ConnectionData)
     s1 = c2.insert(c1)
     result = {}
@@ -299,7 +320,12 @@ def delete_supplier_by_id(supplier_id):
 @app.route('/product/insert', methods=['POST'])
 def product_insert():
     data = request.json
-    c1 = bo.Products(product_name=data['product_name'], unit=data['Unit'], price=data['price'], supplier_id=data['supplier_id'], category_id=data['category_id'])
+    c1 = bo.Products(ProductID=data['ProductID'],
+                             product_name=data['product_name'],
+                                 unit=data['Unit'],
+                                  price=data['price'],
+                                   supplier_id=data['supplier_id'],
+                                    category_id=data['category_id'])
     c2 = do.Products(ConnectionData)
     s1 = c2.insert(c1)
     result = {}
