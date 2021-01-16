@@ -17,11 +17,9 @@ https://docs.docker.com/v17.09/get-started/part2/#dockerfile
 
 # psql -U postgres
 # \l
-# create database northwind;
-# create database categories;
-# create database employees, orderdetails , orders , products, shippers, suppliers
+# create database KTgiuaki;
 # \c xyz;
-# \c northwind;
+# \c KTgiuaki;
 # \dt
 # select * from tblcustomers;
 # select * from Categories;
