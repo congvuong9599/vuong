@@ -1,7 +1,7 @@
 {
     "CustomerID": "",
-    "CustomerName": "Quang",
-    "ContactName": "Lê",
+    "CustomerName": "vuong",
+    "ContactName": "cong",
     "Address": "hoa phong",
     "City": "da nang",
     "PostalCode": "5000",

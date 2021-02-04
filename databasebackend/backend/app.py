@@ -11,7 +11,7 @@ ConnectionData['user'] = 'postgres'
 ConnectionData['password'] = 'postgres'
 ConnectionData['host'] = str(db_ip)
 ConnectionData['port'] = '5432'
-ConnectionData['database'] = 'thicuoiki'
+ConnectionData['database'] = 'thiGiuaKi'
 
 @app.route('/')
 def hello():    
@@ -22,7 +22,7 @@ def hello():
 @app.route('/customer_insert')
 def test_insert():
     c2 = do.Customer(ConnectionData)
-    c1 = bo.Customer(1, 'Quang', 'Le Ha', 'Hoa Vang', 'Danang', '50000', 'Vietnam')
+    c1 = bo.Customer(1, 'Vuong', 'Dang Cong', 'Hoa Vang', 'Danang', '50000', 'Vietnam')
     s1 = c2.insert(c1)
     return s1  
     #them du lieu customers
