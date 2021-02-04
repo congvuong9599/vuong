@@ -1,11 +1,11 @@
-# Nhóm : Hòa Vang hội
-# Đặng Công Vương
-# Trần Quốc Vương
-# Phạm Huỳnh Hải
+# Nhóm : Winer x
+# Lê Hà Quang
+# Hồ Văn Nhật
+# Nguyễn Thị Yến
 
 # DATABASEBACKEND/backend/README.md
 
-git clone https://github.com/congvuong9599/vuong.git
+git clone https://github.com/quang170619/quang17ct2.git
 
 git add .
 
